@@ -1,0 +1,25 @@
+{
+  "name": "versi-simulations",
+  "version": "0.1.0",
+  "author": {
+    "email": "mfcalvanese@gmail.com",
+    "name": "Mike Calvanese"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "babel-polyfill": "^6.23.0",
+    "babel-register": "^6.24.1",
+    "truffle-contract": "^3.0.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1"
+  },
+  "scripts": {
+    "testrpc": "./scripts/runTestrpc.sh",
+    "issue-vsi-eth": "SCRIPT_PATH=simulations/issueVsiEth node run.js",
+    "issue-vsi-eth_debug": "SCRIPT_PATH=simulations/issueVsiEth node  --nolazy --inspect-brk=5858 run.js"
+  }
+}
