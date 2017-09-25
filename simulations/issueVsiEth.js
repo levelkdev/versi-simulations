@@ -4,17 +4,19 @@ import Versi from 'versi'
 const { accounts } = web3.eth
 
 export default async function () {
-  await doThing()
-}
-
-async function doThing() {
+  let tx
   const versi = new Versi(web3Provider, web3, {
     from: accounts[0],
     gas: 4500000
   })
-  const tx = await versi.buyVersiEther(2.5)
+  tx = await versi.buyVersiEther(3)
   console.log(tx.output())
 
+  // tx = await versi.sellVersiEther(1)
+  // console.log(tx.output())
+
   const b = await versi.versiEtherBalance(accounts[0])
-  console.log(`balance=${b}`)
+  console.log(`VSI-ETH balance for account[0]=${b}`)
+
+  console.log(`pool balance = ${await versi.poolValue()}`)
 }
