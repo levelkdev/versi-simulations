@@ -9,18 +9,18 @@ export default async function () {
     from: accounts[0],
     gas: 4500000
   })
-  tx = await versi.exchange.buyVersiEther(3)
+  tx = await versi.exchange.buyVsiEth(3)
   console.log(tx.output())
 
   await logBalances()
 
-  tx = await versi.exchange.sellVersiEther(3)
+  tx = await versi.exchange.sellVsiEth(3)
   console.log(tx.output())
   
   await logBalances()
 
   async function logBalances() {
-    const b = await versi.exchange.versiEtherBalance(accounts[0])
+    const b = await versi.exchange.vsiEthBalance(accounts[0])
     console.log(`VSI-ETH balance for account[0]=${b}`)
     console.log(`pool balance = ${await versi.pool.value()}`)
   }
